@@ -2,7 +2,7 @@ provider "vsphere" {
   user           = "ccooney"
   vsphere_server = "vc-01.lab.adms.local"
 
-  # if you have a self-signed cert testchange
+  # if you have a self-signed cert
   allow_unverified_ssl = true
 }
 
