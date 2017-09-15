@@ -2,14 +2,14 @@ provider "vsphere" {
   user           = "ccooney"
   vsphere_server = "vc-01.lab.adms.local"
 
-  # if you have a self-signed cert
+  # if you have a self-signed cert testchange
   allow_unverified_ssl = true
 }
 
 resource "vsphere_folder" "TF" {
   path = "IT-Staff/CCC/TF"
   datacenter = "ADMS-LL-DC"
-} 
+}
 
 resource "vsphere_virtual_machine" "web01" {
   name   = "web01"
@@ -17,7 +17,7 @@ resource "vsphere_virtual_machine" "web01" {
   memory = 1024
   datacenter = "ADMS-LL-DC"
   folder = "${vsphere_folder.TF.path}"
-  resource_pool = "ATLL-DellR730xd/ATLL-CLU/Resources/Terraform"  
+  resource_pool = "ATLL-DellR730xd/ATLL-CLU/Resources/Terraform"
 
   network_interface {
      label = "ATLL-PhyNet/vxw-dvs-55-virtualwire-42-sid-5013-NST-GuestVM-CCC-LS"
@@ -31,5 +31,3 @@ resource "vsphere_virtual_machine" "web01" {
     datastore = "ATLL-VSAN-DS"
   }
 }
-
-
