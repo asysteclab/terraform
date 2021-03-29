@@ -1,5 +1,6 @@
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
+variable "instance_name" {}
 
 provider "aws" {
   region = "eu-west-1"
@@ -12,6 +13,6 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "terraform-example"
+    Name = "${var.instance_name}"
   }
 }
