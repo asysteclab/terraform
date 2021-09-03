@@ -12,7 +12,7 @@ variable "awsInstanceId" {
   default = ""
 }
 
-resource "aws_security_group" "bsci-access-sg-vra" {
+resource "aws_security_group" "access-sg-vra" {
   name        = var.awsSgName
   description = "Security Group automatically created by vRA Cloud"
   vpc_id      = var.awsVpcId
@@ -37,7 +37,7 @@ data "aws_instance" "instance" {
 }
 
 resource "aws_network_interface_sg_attachment" "sg_attachment" {
-  security_group_id    = aws_security_group.bsci-access-sg-vra.id
+  security_group_id    = aws_security_group.access-sg-vra.id
   network_interface_id = data.aws_instance.instance.network_interface_id
-  depends_on           = [aws_security_group.bsci-access-sg-vra]
+  depends_on           = [aws_security_group.access-sg-vra]
 }
