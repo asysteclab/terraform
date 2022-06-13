@@ -14,16 +14,14 @@ variable "nsxt_admin_pw" {
 provider "nsxt" {
   host           = "10.59.64.128"
   username       = "admin"
-  password       = "${var.nsxt_admin_pw}"
+  password       = var.nsxt_admin_pw
   global_manager = true
   allow_unverified_ssl  = true
   max_retries           = 10
   retry_min_delay       = 500
   retry_max_delay       = 5000
   retry_on_status_codes = [429]
-
 }
-
 
 
 # Create Service
