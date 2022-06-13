@@ -6,6 +6,10 @@ terraform {
   }
 }
 
+variable "nsxt_admin_pw" {
+  description = "Password for Lab NSX-T manager"
+}
+
 # NSX-T Manager Credentials
 provider "nsxt" {
   host           = "10.59.64.128"
