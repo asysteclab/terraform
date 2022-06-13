@@ -10,7 +10,7 @@ terraform {
 provider "nsxt" {
   host           = "10.59.64.128"
   username       = "admin"
-  password       = ""
+  password       = "${var.nsxt_admin_pw}"
   global_manager = true
   allow_unverified_ssl  = true
   max_retries           = 10
