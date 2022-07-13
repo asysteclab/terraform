@@ -77,3 +77,7 @@ resource "vsphere_virtual_machine" "vm" {
   }
   wait_for_guest_net_timeout = 0
 }
+
+output "vsphere_virtual_machine" {
+  value = vsphere_virtual_machine.vm.name
+}
