@@ -40,6 +40,5 @@ resource "vsphere_virtual_machine" "vm" {
     label = "disk0"
     size  = 20
   }
-
   wait_for_guest_net_timeout = 0
 }
