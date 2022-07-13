@@ -1,3 +1,38 @@
+variable "vsphere_username" {
+  description = "vSphere Server admin username"
+  default = "administrator@vsphere.local"
+}
+
+variable "vsphere_password" {
+  description = "vSphere Server admin password"
+  sensitive = true
+}
+
+variable "vsphere_server" {
+  description = "vSphere Server to provision resources on"
+  default = "alpiaasvclab.labvcf.aib.pri"
+}
+
+variable "vsphere_datacenter" {
+  description = "vSphere datacenter to provision resources on"
+  default = "VxRail-Datacenter"
+}
+
+variable "vsphere_datastore" {
+  description = "vSphere datastore to provision resources on"
+  default = "VxRail-Virtual-SAN-Datastore"
+}
+
+variable "vsphere_compute_cluster" {
+  description = "vSphere cluster to provision resources on"
+  default = "IaaSLab01"
+}
+
+variable "vsphere_network" {
+  description = "vSphere network to provision resources on"
+  default = "WIS_demo_segment"
+}
+
 provider "vsphere" {
   user                 = var.vsphere_username
   password             = var.vsphere_password
